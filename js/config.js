@@ -9,9 +9,3 @@ export const VALIDATION_MESSAGES = Object.freeze({
 	titleTooShort: `Title must be at least ${TITLE_MIN_LENGTH} characters.`,
 	titleDuplicate: 'Title must be unique.',
 });
-
-export const FIELD_NAMES = Object.freeze({
-	title: 'title',
-	priority: 'priority',
-	description: 'description',
-});
