@@ -1,1 +1,3 @@
-// App entry point placeholder
+import { initializeTaskForm } from './ui/form.js';
+
+initializeTaskForm();
