@@ -1,1 +1,92 @@
-<!-- Task Manager: HTML scaffold placeholder -->
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Task Manager" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+		<title>Task Manager</title>
+	</head>
+	<body>
+		<main class="page-shell" aria-label="Task manager form area">
+			<div class="task-layout">
+				<section class="task-panel" aria-labelledby="task-form-title">
+					<header class="panel-header">
+						<p class="eyebrow">Task Manager</p>
+						<h1 id="task-form-title">Create New Task</h1>
+					</header>
+
+					<form id="taskForm" class="task-form" novalidate>
+						<div class="field-group">
+							<label class="field-label" for="titleInput">Task Title</label>
+							<input
+								id="titleInput"
+								name="title"
+								type="text"
+								class="field-input"
+								placeholder=" "
+								autocomplete="off"
+								maxlength="80"
+								aria-describedby="titleError"
+								aria-invalid="false"
+								required
+							/>
+							<span class="floating-label">e.g. Go to Gym</span>
+							<p id="titleError" class="field-error" role="status" aria-live="polite"></p>
+						</div>
+
+						<div class="field-group">
+							<label class="field-label" for="priorityInput">Priority</label>
+							<div class="select-wrap">
+								<select
+									id="priorityInput"
+									name="priority"
+									class="field-input field-select"
+									aria-describedby="priorityHelp"
+								>
+									<option value="High">High</option>
+									<option value="Medium" selected>Medium</option>
+									<option value="Low">Low</option>
+								</select>
+							</div>
+							<p id="priorityHelp" class="field-help">Set priority level</p>
+						</div>
+
+						<div class="field-group">
+							<label class="field-label" for="descriptionInput">Description</label>
+							<textarea
+								id="descriptionInput"
+								name="description"
+								class="field-input field-textarea"
+								placeholder="Describe the task (optional)"
+								rows="4"
+								maxlength="280"
+							></textarea>
+						</div>
+
+						<button id="submitButton" type="submit" class="submit-btn" disabled>
+							Add Task
+						</button>
+					</form>
+				</section>
+
+				<section class="task-panel task-panel--list" aria-label="Task list panel">
+					<header class="panel-header panel-header--compact">
+						<p class="eyebrow">Tasks</p>
+						<h2 class="panel-title-small">Task List</h2>
+					</header>
+					<section class="task-list-section" aria-label="Task list">
+						<ul id="task-list" class="task-list"></ul>
+					</section>
+				</section>
+			</div>
+		</main>
+
+		<script type="module" src="./js/main.js"></script>
+	</body>
+</html>
